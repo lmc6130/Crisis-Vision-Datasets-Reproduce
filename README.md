@@ -11,6 +11,7 @@ Paper link: https://arxiv.org/abs/2011.08916
 * Initial learning rate=0.00001
 * lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=10)
 * GPU : NVIDIA Tesla V100 SXM2 32GB
+* Model: ResNet-18, ResNet-50, ResNet-101, VGG-16, DenseNet-121, EfficientNet-b1
 
 ## Implementated Network
 * ResNet        [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385v1)
