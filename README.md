@@ -18,3 +18,7 @@ Paper link: https://arxiv.org/abs/2011.08916
 * EfficientNet  [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946)
 * VGG           [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556v6)
 * DenseNet      [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993v5)
+
+## Train from scratch Optimizer Schedule
+* [Improved Regularization of Convolutional Neural Networks with Cutout](https://arxiv.org/abs/1708.04552v2)
+* [Source Code](https://github.com/uoguelph-mlrg/Cutout)
