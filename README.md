@@ -21,4 +21,4 @@ Paper link: https://arxiv.org/abs/2011.08916
 
 ## Train from scratch Optimizer Schedule
 * [Improved Regularization of Convolutional Neural Networks with Cutout](https://arxiv.org/abs/1708.04552v2)
-* [Source Code](https://github.com/uoguelph-mlrg/Cutout)
+* [Source Code of Improved Regularization of Convolutional Neural Networks with Cutout](https://github.com/uoguelph-mlrg/Cutout)
