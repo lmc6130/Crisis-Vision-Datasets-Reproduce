@@ -1,4 +1,4 @@
-# Crisis-Vision-Datasets-Reproduce
+# Crisis Vision Datasets Reproduce
 
 This repositories is reproduce the work of "Crisis Vision Benchmark Dataset" by Firoj Alam, Ferda Ofli, Muhammad Imran, Tanvirul Alam, Umair Qazi
 
