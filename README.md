@@ -21,7 +21,7 @@ This experiment uses the F1-score as the metric.
 | Model | Author Result | Reproduce Results
 | :--- | :---: | :---: |
 | DenseNet-121 | 73.90% |  |
-| EfficientNet-b1 | **75.80%** | **75.89%** |
+| EfficientNet-b1 | **75.80%** | **76.28%** |
 | ResNet-18 | 73.60% |  |
 | ResNet-50 | 75.10% | 74.69% |
 | ResNet-101 | 73.70% |  |
