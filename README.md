@@ -10,9 +10,8 @@ Paper link: https://arxiv.org/abs/2011.08916
 * Initial learning rate=0.00001
 * optimizer=Adam
 * Resolution:
-  * DenseNet = 224*224
+  * DenseNet, MobileNet, ResNet, VGG = 224*224
   * EfficientNet-b1 = 240*240
-  * ResNet = 224*224
 * GPU : NVIDIA Tesla V100 SXM2 32GB
 
 ## Reproduce Results
