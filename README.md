@@ -18,48 +18,48 @@ Paper link: https://arxiv.org/abs/2011.08916
 ## Reproduce Results
 This experiment uses the F1-score as the metric.
 ### Damage Severity
-| Model | Author Result | Reproduce Results
-| :--- | :---: | :---: |
-| DenseNet-121 | 73.90% |  |
-| EfficientNet-b1 | **75.80%** | **76.28%** |
-| MobileNet-v2 | 73.00% |  |
-| ResNet-18 | 73.60% |  |
-| ResNet-50 | 75.10% | 74.69% |
-| ResNet-101 | 73.70% |  |
-| VGG-16 | 75.30% |  |
+| Model | Author Result | Reproduce Results | Reproduce Weight |
+| :--- | :---: | :---: | :---: |
+| DenseNet-121 | 73.90% |  |  |
+| EfficientNet-b1 | **75.80%** | **76.28%** | [Weight](https://drive.google.com/file/d/177g_Cd9WTFJWcLkeKyz5oaGFAO1jZBlG/view?usp=drive_link) |
+| MobileNet-v2 | 73.00% |  |  |
+| ResNet-18 | 73.60% |  |  |
+| ResNet-50 | 75.10% | 74.69% |  |
+| ResNet-101 | 73.70% |  |  |
+| VGG-16 | 75.30% |  |  |
 
 ### Disaster Types
-| Model | Author Result | Reproduce Results
-| :--- | :---: | :---: |
-| DenseNet-121 | 80.60% |  |
-| EfficientNet-b1 | **81.60%** |  |
-| MobileNet-v2 | 78.20% |  |
-| ResNet-18 | 78.50% |  |
-| ResNet-50 | 80.80% |  |
-| ResNet-101 | 81.30% |  |
-| VGG-16 | 79.80% |  |
+| Model | Author Result | Reproduce Results | Reproduce Weight |
+| :--- | :---: | :---: | :---: |
+| DenseNet-121 | 80.60% |  |  |
+| EfficientNet-b1 | **81.60%** |  |  |
+| MobileNet-v2 | 78.20% |  |  |
+| ResNet-18 | 78.50% |  |  |
+| ResNet-50 | 80.80% |  |  |
+| ResNet-101 | 81.30% |  |  |
+| VGG-16 | 79.80% |  |  |
 
 ### Humanitarian
-| Model | Author Result | Reproduce Results
-| :--- | :---: | :---: |
-| DenseNet-121 | 75.50% |  |
-| EfficientNet-b1 | 76.50% |  |
-| MobileNet-v2 | 74.60% |  |
-| ResNet-18 | 74.90% |  |
-| ResNet-50 | 76.20% |  |
-| ResNet-101 | 76.50% |  |
-| VGG-16 | **77.30%** |  |
+| Model | Author Result | Reproduce Results | Reproduce Weight |
+| :--- | :---: | :---: | :---: |
+| DenseNet-121 | 75.50% |  |  |
+| EfficientNet-b1 | 76.50% |  |  |
+| MobileNet-v2 | 74.60% |  |  |
+| ResNet-18 | 74.90% |  |  |
+| ResNet-50 | 76.20% |  |  |
+| ResNet-101 | 76.50% |  |  |
+| VGG-16 | **77.30%** |  |  |
 
 ### Informative
-| Model | Author Result | Reproduce Results
-| :--- | :---: | :---: |
-| DenseNet-121 | 86.20% |  |
-| EfficientNet-b1 | **86.30%** |  |
-| MobileNet-v2 | 84.90% |  |
-| ResNet-18 | 85.10% |  |
-| ResNet-50 | 85.20% |  |
-| ResNet-101 | 85.20% |  |
-| VGG-16 | 85.80% |  |
+| Model | Author Result | Reproduce Results | Reproduce Weight |
+| :--- | :---: | :---: | :---: |
+| DenseNet-121 | 86.20% |  |  |
+| EfficientNet-b1 | **86.30%** |  |  |
+| MobileNet-v2 | 84.90% |  |  |
+| ResNet-18 | 85.10% |  |  |
+| ResNet-50 | 85.20% |  |  |
+| ResNet-101 | 85.20% |  |  |
+| VGG-16 | 85.80% |  |  |
 
 ## Implementated Network
 * DenseNet      [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993v5)
