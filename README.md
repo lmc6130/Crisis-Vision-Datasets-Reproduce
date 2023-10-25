@@ -22,6 +22,7 @@ This experiment uses the F1-score as the metric.
 | :--- | :---: | :---: |
 | DenseNet-121 | 73.90% |  |
 | EfficientNet-b1 | **75.80%** | **76.28%** |
+| MobileNet-v2 | 73.00% |  |
 | ResNet-18 | 73.60% |  |
 | ResNet-50 | 75.10% | 74.69% |
 | ResNet-101 | 73.70% |  |
@@ -32,6 +33,7 @@ This experiment uses the F1-score as the metric.
 | :--- | :---: | :---: |
 | DenseNet-121 | 80.60% |  |
 | EfficientNet-b1 | **81.60%** |  |
+| MobileNet-v2 | 78.20% |  |
 | ResNet-18 | 78.50% |  |
 | ResNet-50 | 80.80% |  |
 | ResNet-101 | 81.30% |  |
@@ -42,6 +44,7 @@ This experiment uses the F1-score as the metric.
 | :--- | :---: | :---: |
 | DenseNet-121 | 75.50% |  |
 | EfficientNet-b1 | 76.50% |  |
+| MobileNet-v2 | 74.60% |  |
 | ResNet-18 | 74.90% |  |
 | ResNet-50 | 76.20% |  |
 | ResNet-101 | 76.50% |  |
@@ -52,6 +55,7 @@ This experiment uses the F1-score as the metric.
 | :--- | :---: | :---: |
 | DenseNet-121 | 86.20% |  |
 | EfficientNet-b1 | **86.30%** |  |
+| MobileNet-v2 | 84.90% |  |
 | ResNet-18 | 85.10% |  |
 | ResNet-50 | 85.20% |  |
 | ResNet-101 | 85.20% |  |
@@ -60,6 +64,7 @@ This experiment uses the F1-score as the metric.
 ## Implementated Network
 * DenseNet      [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993v5)
 * EfficientNet  [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946)
+* MobileNet-v2  [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
 * ResNet        [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385v1)
 * VGG           [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556v6)
 
