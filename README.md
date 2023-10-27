@@ -25,7 +25,7 @@ This experiment uses the F1-score as the metric.
 | ResNet-18 | 73.60% |  |  |
 | ResNet-50 | 75.10% |  |  |
 | ResNet-101 | 73.70% |  |  |
-| VGG-16 | 75.30% |  |  |
+| VGG-16 | 75.30% | 75.85% | [Weight](https://drive.google.com/file/d/184EGAcoR-JbA0M38vPq1rqDBTaUUjquu/view?usp=drive_link) |
 
 ### Disaster Types
 | Model | Author Result | Reproduce Results | Reproduce Weight |
