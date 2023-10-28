@@ -23,7 +23,7 @@ This experiment uses the F1-score as the metric.
 | EfficientNet-b1 | **75.80%** | **76.28%** | [Weight](https://drive.google.com/file/d/177g_Cd9WTFJWcLkeKyz5oaGFAO1jZBlG/view?usp=drive_link) |
 | MobileNet-v2 | 73.00% | 74.21% | [Weight](https://drive.google.com/file/d/17QBTqFKYuIpNYwfBW7NMaHkqtzszqCaT/view?usp=drive_link) |
 | ResNet-18 | 73.60% | 74.04% | [Weight](https://drive.google.com/file/d/185Q999Qtx5bNYVd4U0hXdjlkL8TxZ8tL/view?usp=drive_link) |
-| ResNet-50 | 75.10% |  |  |
+| ResNet-50 | 75.10% | 74.03% | [Weight](https://drive.google.com/file/d/13OnkaqVtt4-iionca2wc64-SH2VBhW9F/view?usp=drive_link) |
 | ResNet-101 | 73.70% |  |  |
 | VGG-16 | 75.30% | 75.85% | [Weight](https://drive.google.com/file/d/184EGAcoR-JbA0M38vPq1rqDBTaUUjquu/view?usp=drive_link) |
 
