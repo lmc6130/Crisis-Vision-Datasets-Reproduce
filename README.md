@@ -35,7 +35,7 @@ This experiment uses the F1-score as the metric.
 | MobileNet-v2 | 78.20% |  |  |
 | ResNet-18 | 78.50% |  |  |
 | ResNet-50 | 80.80% |  |  |
-| ResNet-101 | 81.30% |  |  |
+| ResNet-101 | 81.30% | 80.36% | [Weight](https://drive.google.com/file/d/149QLdx6IzY8VQad4vwLU2clvM5wSS0R2/view?usp=drive_link) |
 | VGG-16 | 79.80% |  |  |
 
 ### Humanitarian
