@@ -30,7 +30,7 @@ This experiment uses the F1-score as the metric.
 ### Disaster Types
 | Model | Author Result | Reproduce Results | Reproduce Weight |
 | :--- | :---: | :---: | :---: |
-| DenseNet-121 | 80.60% |  |  |
+| DenseNet-121 | 80.60% | 79.92% | [Weight](https://drive.google.com/file/d/14RBrLHlcQQKYdtYwU168u_gk7dgRZJIs/view?usp=drive_link) |
 | EfficientNet-b1 | **81.60%** |  |  |
 | MobileNet-v2 | 78.20% |  |  |
 | ResNet-18 | 78.50% | 78.59% | [Weight](https://drive.google.com/file/d/14Gtc_zbBhsOqoRM62svCBdIgF6ULQdui/view?usp=drive_link) |
