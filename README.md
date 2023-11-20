@@ -19,24 +19,24 @@ This experiment uses the F1-score as the metric.
 ### Damage Severity
 | Model | Author Result | Reproduce Results | Reproduce Weight |
 | :--- | :---: | :---: | :---: |
-| DenseNet-121 | 73.90% | 74.37% | [Weight](https://drive.google.com/file/d/1835HD82jzrExkVvtOv4zQ1HsqNVwZ_qq/view?usp=drive_link) |
-| EfficientNet-b1 | **75.80%** | **76.28%** | [Weight](https://drive.google.com/file/d/177g_Cd9WTFJWcLkeKyz5oaGFAO1jZBlG/view?usp=drive_link) |
-| MobileNet-v2 | 73.00% | 74.21% | [Weight](https://drive.google.com/file/d/17QBTqFKYuIpNYwfBW7NMaHkqtzszqCaT/view?usp=drive_link) |
-| ResNet-18 | 73.60% | 74.04% | [Weight](https://drive.google.com/file/d/185Q999Qtx5bNYVd4U0hXdjlkL8TxZ8tL/view?usp=drive_link) |
-| ResNet-50 | 75.10% | 74.03% | [Weight](https://drive.google.com/file/d/13OnkaqVtt4-iionca2wc64-SH2VBhW9F/view?usp=drive_link) |
-| ResNet-101 | 73.70% | 73.92% | [Weight](https://drive.google.com/file/d/13TRGfziVfk3gaAMkpxuAvDHazSVtzSNu/view?usp=drive_link) |
-| VGG-16 | 75.30% | 75.85% | [Weight](https://drive.google.com/file/d/184EGAcoR-JbA0M38vPq1rqDBTaUUjquu/view?usp=drive_link) |
+| DenseNet-121 | 73.90% | 74.37% | [Weight](https://drive.google.com/file/d/1KTFAi43RMVnwNZ-YRt-kV9WUbGZmovHt/view?usp=drive_link) |
+| EfficientNet-b1 | **75.80%** | **76.28%** | [Weight](https://drive.google.com/file/d/1FZUrzAR_qiPYMt5B5Rmn-zGkdazh1NbG/view?usp=drive_link) |
+| MobileNet-v2 | 73.00% | 74.21% | [Weight](https://drive.google.com/file/d/1x2BEUhjO5f4IylHCC2sR6SVZa0FV75Yx/view?usp=drive_link) |
+| ResNet-18 | 73.60% | 74.04% | [Weight](https://drive.google.com/file/d/13fSwKpZvyDiZOuBpQz1eB9gxdNu6kDzG/view?usp=drive_link) |
+| ResNet-50 | 75.10% | 74.03% | [Weight](https://drive.google.com/file/d/1TR8E_EBRVOGmkmzH6YxBqE-Q4uyhFV4j/view?usp=drive_link) |
+| ResNet-101 | 73.70% | 73.92% | [Weight](https://drive.google.com/file/d/1nYJngvlDLLuQBhoFueus3k0wzZ3kRGni/view?usp=drive_link) |
+| VGG-16 | 75.30% | 75.85% | [Weight](https://drive.google.com/file/d/1aNo4oNys8BPh4GS-3VufiVkuLIrHJp2k/view?usp=drive_link) |
 
 ### Disaster Types
 | Model | Author Result | Reproduce Results | Reproduce Weight |
 | :--- | :---: | :---: | :---: |
-| DenseNet-121 | 80.60% | 79.92% | [Weight](https://drive.google.com/file/d/14RBrLHlcQQKYdtYwU168u_gk7dgRZJIs/view?usp=drive_link) |
+| DenseNet-121 | 80.60% | 79.92% | [Weight](https://drive.google.com/file/d/1hQ-uFzD3I6ygkmv_iq4kAGy4g_64Lhph/view?usp=drive_link) |
 | EfficientNet-b1 | **81.60%** |  |  |
-| MobileNet-v2 | 78.20% | 78.59% | [Weight](https://drive.google.com/file/d/14fhhNaVueQUtJyn3nf7ozHC6UP-BEVly/view?usp=drive_link) |
-| ResNet-18 | 78.50% | 78.59% | [Weight](https://drive.google.com/file/d/14Gtc_zbBhsOqoRM62svCBdIgF6ULQdui/view?usp=drive_link) |
-| ResNet-50 | 80.80% | 80.01% | [Weight](https://drive.google.com/file/d/14D9qep_uEVkK_3fKS4SFdVo3JvRKw-TU/view?usp=drive_link) |
-| ResNet-101 | 81.30% | 80.36% | [Weight](https://drive.google.com/file/d/149QLdx6IzY8VQad4vwLU2clvM5wSS0R2/view?usp=drive_link) |
-| VGG-16 | 79.80% | 80.04% | [Weight](https://drive.google.com/file/d/14dhfBhfip2FIg2YbHClnWw7LZD_gG-de/view?usp=drive_link) |
+| MobileNet-v2 | 78.20% | 78.59% | [Weight](https://drive.google.com/file/d/1AUt0RI78Encoo7rYEoo8QBQaqyK8KwM_/view?usp=drive_link) |
+| ResNet-18 | 78.50% | 78.59% | [Weight](https://drive.google.com/file/d/1_ykONq7K0djuSq0W_JKOE3H-_2IxSm7d/view?usp=drive_link) |
+| ResNet-50 | 80.80% | 80.01% | [Weight](https://drive.google.com/file/d/1K4STGU7KZ9XFCdEqMtK2mgtjzIBbc7K8/view?usp=drive_link) |
+| ResNet-101 | 81.30% | 80.36% | [Weight](https://drive.google.com/file/d/1DP7Wd1J2J7qAhb3acUo6gdZxwnv7i-GE/view?usp=drive_link) |
+| VGG-16 | 79.80% | 80.04% | [Weight](https://drive.google.com/file/d/1KVDijAFzUaX9KJm1lrcpIyRy9g2L6xap/view?usp=drive_link) |
 
 ### Humanitarian
 | Model | Author Result | Reproduce Results | Reproduce Weight |
