@@ -31,7 +31,7 @@ This experiment uses the F1-score as the metric.
 | Model | Author Result | Reproduce Results | Reproduce Weight |
 | :--- | :---: | :---: | :---: |
 | DenseNet-121 | 80.60% | 79.92% | [Weight](https://drive.google.com/file/d/1hQ-uFzD3I6ygkmv_iq4kAGy4g_64Lhph/view?usp=drive_link) |
-| EfficientNet-b1 | **81.60%** |  |  |
+| EfficientNet-b1 | **81.60%** | **81.48%** | [Weight](https://drive.google.com/file/d/1dmpYsNetbvFQU49em84iG8DIab4WZT5R/view?usp=drive_link) |
 | MobileNet-v2 | 78.20% | 78.59% | [Weight](https://drive.google.com/file/d/1AUt0RI78Encoo7rYEoo8QBQaqyK8KwM_/view?usp=drive_link) |
 | ResNet-18 | 78.50% | 78.59% | [Weight](https://drive.google.com/file/d/1_ykONq7K0djuSq0W_JKOE3H-_2IxSm7d/view?usp=drive_link) |
 | ResNet-50 | 80.80% | 80.01% | [Weight](https://drive.google.com/file/d/1K4STGU7KZ9XFCdEqMtK2mgtjzIBbc7K8/view?usp=drive_link) |
