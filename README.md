@@ -41,7 +41,7 @@ This experiment uses the F1-score as the metric.
 ### Humanitarian
 | Model | Author Result | Reproduce Results | Reproduce Weight |
 | :--- | :---: | :---: | :---: |
-| DenseNet-121 | 75.50% |  |  |
+| DenseNet-121 | 75.50% | 75.55% | [Weight](https://drive.google.com/file/d/1izWizcQcexbJaNZ9VplCjj_eEiDMr7dR/view?usp=drive_link) |
 | EfficientNet-b1 | 76.50% | **77.08%** | [Weight](https://drive.google.com/file/d/1q1fWpdIeTbPYDsnRQb2kgoeFkgDkR759/view?usp=drive_link) |
 | MobileNet-v2 | 74.60% | 75.29% | [Weight](https://drive.google.com/file/d/1ik7rd-aRsh220v2G5q0oRfBtoFpYxGXn/view?usp=drive_link) |
 | ResNet-18 | 74.90% |  |  |
