@@ -44,9 +44,9 @@ This experiment uses the F1-score as the metric.
 | DenseNet-121 | 75.50% | 75.55% | [Weight](https://drive.google.com/file/d/1izWizcQcexbJaNZ9VplCjj_eEiDMr7dR/view?usp=drive_link) |
 | EfficientNet-b1 | 76.50% | **77.08%** | [Weight](https://drive.google.com/file/d/1q1fWpdIeTbPYDsnRQb2kgoeFkgDkR759/view?usp=drive_link) |
 | MobileNet-v2 | 74.60% | 75.29% | [Weight](https://drive.google.com/file/d/1ik7rd-aRsh220v2G5q0oRfBtoFpYxGXn/view?usp=drive_link) |
-| ResNet-18 | 74.90% |  |  |
-| ResNet-50 | 76.20% |  |  |
-| ResNet-101 | 76.50% |  |  |
+| ResNet-18 | 74.90% | 74.62% | [Weight](https://drive.google.com/file/d/19ifr44PnEUIWnn6JGHWxTc-St-SRvylJ/view?usp=drive_link) |
+| ResNet-50 | 76.20% | 76.43% | [Weight](https://drive.google.com/file/d/1W3_1c6ZkziqLyYuCf_P9IB7S09kCBEB4/view?usp=drive_link) |
+| ResNet-101 | 76.50% | 76.16% | [Weight](https://drive.google.com/file/d/1k3kJRrJRu8kwhopKuo2cZ3fJQ5jHwb5u/view?usp=drive_link) |
 | VGG-16 | **77.30%** | 76.01% | [Weight](https://drive.google.com/file/d/1eRKBCkFD2eFm5jnoZPgPlSKGipctizQx/view?usp=drive_link) |
 
 ### Informative
