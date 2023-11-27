@@ -55,9 +55,9 @@ This experiment uses the F1-score as the metric.
 | DenseNet-121 | 86.20% |  |  |
 | EfficientNet-b1 | **86.30%** |  |  |
 | MobileNet-v2 | 84.90% |  |  |
-| ResNet-18 | 85.10% |  |  |
-| ResNet-50 | 85.20% |  |  |
-| ResNet-101 | 85.20% |  |  |
+| ResNet-18 | 85.10% | 84.56% | [Weight](https://drive.google.com/file/d/14ygTIGLDzQlD6Z7XIn-f3U5CbsQkx2r7/view?usp=drive_link) |
+| ResNet-50 | 85.20% | 85.36% | [Weight](https://drive.google.com/file/d/1DR2vlAlj0ETGjgulPlc_IJ_5eHs92djK/view?usp=drive_link) |
+| ResNet-101 | 85.20% | 85.42% | [Weight](https://drive.google.com/file/d/1En6PgZZDc74Kn7eua_MenpVQMfL9erZc/view?usp=drive_link) |
 | VGG-16 | 85.80% |  |  |
 
 ## Implementated Network
