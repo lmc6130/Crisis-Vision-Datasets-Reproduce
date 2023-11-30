@@ -52,13 +52,13 @@ This experiment uses the F1-score as the metric.
 ### Informative
 | Model | Author Result | Reproduce Results | Reproduce Weight |
 | :--- | :---: | :---: | :---: |
-| DenseNet-121 | 86.20% |  |  |
-| EfficientNet-b1 | **86.30%** |  |  |
-| MobileNet-v2 | 84.90% |  |  |
+| DenseNet-121 | 86.20% | 85.06% | [Weight](https://drive.google.com/file/d/1ehyCmaHwFEcQKYyp0eubtqnN9zfJgMco/view?usp=drive_link) |
+| EfficientNet-b1 | **86.30%** | 85.74% | [Weight](https://drive.google.com/file/d/1aH1E7KhY9i_cX_JXcFAxjyHNLiJ1L40I/view?usp=drive_link) |
+| MobileNet-v2 | 84.90% | 85.04% | [Weight](https://drive.google.com/file/d/181rpcc70cE7zM4a8rpVq1BULnoEyX2xe/view?usp=drive_link) |
 | ResNet-18 | 85.10% | 84.56% | [Weight](https://drive.google.com/file/d/14ygTIGLDzQlD6Z7XIn-f3U5CbsQkx2r7/view?usp=drive_link) |
 | ResNet-50 | 85.20% | 85.36% | [Weight](https://drive.google.com/file/d/1DR2vlAlj0ETGjgulPlc_IJ_5eHs92djK/view?usp=drive_link) |
 | ResNet-101 | 85.20% | 85.42% | [Weight](https://drive.google.com/file/d/1En6PgZZDc74Kn7eua_MenpVQMfL9erZc/view?usp=drive_link) |
-| VGG-16 | 85.80% |  |  |
+| VGG-16 | 85.80% | **85.80%** | [Weight](https://drive.google.com/file/d/1AfHoTPDEYrUY01PsOj6RS2Yeqm8KHR5L/view?usp=drive_link) |
 
 ## Implementated Network
 * DenseNet      [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993v5)
