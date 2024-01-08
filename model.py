@@ -1,4 +1,3 @@
-import torch
 import torch.nn as nn
 import torch.optim as optim
 import torchvision.models as models
@@ -6,152 +5,53 @@ import wandb
 from torch.nn.parallel import DataParallel
 
 
-def resnet18_model(weights, num_classes):
-    model = models.resnet18(weights=weights)
-    num_ftrs = model.fc.in_features
-    model.fc = nn.Linear(num_ftrs, num_classes)
-    return model
+def modify_model_head(model, num_classes):
+    model_name = model.__class__.__name__.lower()
 
-def resnet50_model(weights, num_classes):
-    model = models.resnet50(weights=weights)
-    num_ftrs = model.fc.in_features
-    model.fc = nn.Linear(num_ftrs, num_classes)
-    return model
-
-def resnet101_model(weights, num_classes):
-    model = models.resnet101(weights=weights)
-    num_ftrs = model.fc.in_features
-    model.fc = nn.Linear(num_ftrs, num_classes)
-    return model
-
-def efficientnetb1_model(weights, num_classes):
-    model = models.efficientnet_b1(weights=weights)
-    num_ftrs = model.classifier[-1].in_features
-    model.classifier[-1] = nn.Linear(num_ftrs, num_classes)
-    return model
-
-def mobilenetv2_model(weights, num_classes):
-    model = models.mobilenet_v2(weights=weights)
-    num_ftrs = model.classifier[-1].in_features
-    model.classifier[-1] = nn.Linear(num_ftrs, num_classes)
-    return model
-
-def densenet121_model(weights, num_classes):
-    model = models.densenet121(weights=weights)
-    num_ftrs = model.classifier.in_features
-    model.classifier = nn.Linear(num_ftrs, num_classes)
-    return model
-
-def vgg16_model(weights, num_classes):
-    model = models.vgg16(weights=weights)
-    num_ftrs = model.classifier[-1].in_features
-    model.classifier[-1] = nn.Linear(num_ftrs, num_classes)
+    if 'resnet' in model_name:
+        model.fc = nn.Linear(model.fc.in_features, num_classes)
+    elif 'efficientnet' in model_name:
+        model.classifier[-1] = nn.Linear(model.classifier[-1].in_features, num_classes)
+    elif 'densenet' in model_name:
+        model.classifier[-1] = nn.Linear(model.classifier.in_features, num_classes)
+    elif 'mobilenet' in model_name:
+        model.classifier[-1] = nn.Linear(model.classifier[-1].in_features, num_classes)
+    elif 'vgg' in model_name:
+        model.classifier[-1] = nn.Linear(model.classifier[-1].in_features, num_classes)
+    else:
+        raise ValueError("Unsupported model architecture for modifying head.")
+    
     return model
 
 def create_model(model_type, weights, num_classes, device, freeze=False):
-    if model_type == 'resnet18':
-        backbone = resnet18_model(weights, num_classes)
-        wandb.log({"checkpoint_info": f"Using ResNet-18 Model, Freeze Backbone: {freeze}"})
-        print("checkpoint:", f"Using ResNet-18 Model, Freeze Backbone: {freeze}")
-        if freeze:
-            for name, param in backbone.named_parameters():
-                if not 'fc' in name:
-                    param.requires_grad = False
-                print(name, param.requires_grad)
-            print('checkpoint: Backbone Frozen')
-            wandb.log({"checkpoint_info": "Backbone Frozen"})
-        else:
-            print('checkpoint: fully fine-tuning')
-            wandb.log({"checkpoint_info": "Fully Fine-tuning Backbone"})
+    model_fn_dict = {
+        'resnet18': models.resnet18,
+        'resnet50': models.resnet50,
+        'resnet101': models.resnet101,
+        'effnet': models.efficientnet_b1,
+        'mobilenet': models.mobilenet_v2,
+        'densenet': models.densenet121,
+        'vgg': models.vgg16,
+    }
 
-    elif model_type == 'resnet50':
-        backbone = resnet50_model(weights, num_classes)
-        wandb.log({"checkpoint_info": f"Using ResNet-50 Model, Freeze Backbone: {freeze}"})
-        print("checkpoint:", f"Using ResNet-50 Model, Freeze Backbone: {freeze}")
-        if freeze:
-            for name, param in backbone.named_parameters():
-                if not 'fc' in name:
-                    param.requires_grad = False
-                print(name, param.requires_grad)
-            print('checkpoint: Backbone Frozen')
-            wandb.log({"checkpoint_info": "Backbone Frozen"})
-        else:
-            print('checkpoint: fully fine-tuning')
-            wandb.log({"checkpoint_info": "Fully Fine-tuning Backbone"})
-
-    elif model_type == 'resnet101':
-        backbone = resnet101_model(weights, num_classes)
-        wandb.log({"checkpoint_info": f"Using ResNet-101 Model, Freeze Backbone: {freeze}"})
-        print("checkpoint:", f"Using ResNet-101 Model, Freeze Backbone: {freeze}")
-        if freeze:
-            for name, param in backbone.named_parameters():
-                if not 'fc' in name:
-                    param.requires_grad = False
-                print(name, param.requires_grad)
-            print('checkpoint: Backbone Frozen')
-            wandb.log({"checkpoint_info": "Backbone Frozen"})
-        else:
-            print('checkpoint: fully fine-tuning')
-            wandb.log({"checkpoint_info": "Fully Fine-tuning Backbone"})
-
-    elif model_type == 'effnet':
-        backbone = efficientnetb1_model(weights, num_classes)
-        wandb.log({"checkpoint_info": f"Using EfficientNet-b1 Model, Freeze Backbone: {freeze}"})
-        print("checkpoint:", f"Using EfficientNet-b1 Model, Freeze Backbone: {freeze}")
-        if freeze:
-            for name, param in backbone.named_parameters():
-                if not 'classifier' in name:
-                    param.requires_grad = False
-            print('checkpoint: Backbone Frozen')
-            wandb.log({"checkpoint_info": "Backbone Frozen"})
-        else:
-            print('checkpoint: fully fine-tuning')
-            wandb.log({"checkpoint_info": "Fully Fine-tuning Backbone"})
-    
-    elif model_type == 'mobilenet':
-        backbone = mobilenetv2_model(weights, num_classes)
-        wandb.log({"checkpoint_info": f"Using MobileNet-v2 Model, Freeze Backbone: {freeze}"})
-        print("checkpoint:", f"Using MobileNet-v2 Model, Freeze Backbone: {freeze}")
-        if freeze:
-            for name, param in backbone.named_parameters():
-                if not 'classifier' in name:
-                    param.requires_grad = False
-            print('checkpoint: Backbone Frozen')
-            wandb.log({"checkpoint_info": "Backbone Frozen"})
-        else:
-            print('checkpoint: fully fine-tuning')
-            wandb.log({"checkpoint_info": "Fully Fine-tuning Backbone"})
-
-    elif model_type == 'vgg':
-        backbone = vgg16_model(weights, num_classes)
-        wandb.log({"checkpoint_info": f"Using VGG-16 Model, Freeze Backbone: {freeze}"})
-        print("checkpoint:", f"Using VGG-16 Model, Freeze Backbone: {freeze}")
-        if freeze:
-            for name, param in backbone.named_parameters():
-                if not 'classifier' in name:
-                    param.requires_grad = False
-            print('checkpoint: Backbone Frozen')
-            wandb.log({"checkpoint_info": "Backbone Frozen"})
-        else:
-            print('checkpoint: fully fine-tuning')
-            wandb.log({"checkpoint_info": "Fully Fine-tuning Backbone"})
-
-    elif model_type == 'densenet':
-        backbone = densenet121_model(weights, num_classes)
-        wandb.log({"checkpoint_info": f"Using DenseNet-121 Model, Freeze Backbone: {freeze}"})
-        print("checkpoint:", f"Using DenseNet-121 Model, Freeze Backbone: {freeze}")
-        if freeze:
-            for name, param in backbone.named_parameters():
-                if not 'classifier' in name:
-                    param.requires_grad = False
-            print('checkpoint: Backbone Frozen')
-            wandb.log({"checkpoint_info": "Backbone Frozen"})
-        else:
-            print('checkpoint: fully fine-tuning')
-            wandb.log({"checkpoint_info": "Fully Fine-tuning Backbone"})
-
-    else:
+    if model_type not in model_fn_dict:
         raise ValueError("Invalid model type.")
+
+    backbone = model_fn_dict[model_type](weights=weights)
+    wandb.log({"checkpoint_info": f"Using {model_type.capitalize()} Model, Freeze Backbone: {freeze}"})
+    print("checkpoint:", f"Using {model_type.capitalize()} Model, Freeze Backbone: {freeze}")
+
+    if freeze:
+        for name, param in backbone.named_parameters():
+            if not any(layer_name in name for layer_name in ('fc', 'classifier')):
+                param.requires_grad = False
+        print('checkpoint: Backbone Frozen')
+        wandb.log({"checkpoint_info": "Backbone Frozen"})
+    else:
+        print('checkpoint: Fully fine-tuning')
+        wandb.log({"checkpoint_info": "Fully Fine-tuning Backbone"})
+
+    model = modify_model_head(backbone, num_classes)
 
     model = DataParallel(model)
     model = model.to(device)
@@ -159,49 +59,24 @@ def create_model(model_type, weights, num_classes, device, freeze=False):
     return model
 
 def get_model_optimizer_scheduler(args, class_names, device):
-    if args.model == 'resnet18':
-        weights = models.ResNet18_Weights.IMAGENET1K_V1
-        model = create_model(args.model, weights, len(class_names), device, freeze=args.freeze)
-        criterion = nn.CrossEntropyLoss()
-        optimizer = optim.Adam(model.parameters(), lr=args.lr)
-        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=10, mode='max')
-    elif args.model == 'resnet50':
-        weights = models.ResNet50_Weights.IMAGENET1K_V1
-        model = create_model(args.model, weights, len(class_names), device, freeze=args.freeze)
-        criterion = nn.CrossEntropyLoss()
-        optimizer = optim.Adam(model.parameters(), lr=args.lr)
-        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=10, mode='max')
-    elif args.model == 'resnet101':
-        weights = models.ResNet101_Weights.IMAGENET1K_V1
-        model = create_model(args.model, weights, len(class_names), device, freeze=args.freeze)
-        criterion = nn.CrossEntropyLoss()
-        optimizer = optim.Adam(model.parameters(), lr=args.lr)
-        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=10, mode='max')
-    elif args.model == 'vgg':
-        weights = models.VGG16_Weights.IMAGENET1K_V1
-        model = create_model(args.model, weights, len(class_names), device, freeze=args.freeze)
-        criterion = nn.CrossEntropyLoss()
-        optimizer = optim.Adam(model.parameters(), lr=args.lr)
-        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=10, mode='max')
-    elif args.model == 'densenet':
-        weights = models.DenseNet121_Weights.IMAGENET1K_V1
-        model = create_model(args.model, weights, len(class_names), device, freeze=args.freeze)
-        criterion = nn.CrossEntropyLoss()
-        optimizer = optim.Adam(model.parameters(), lr=args.lr)
-        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=10, mode='max')
-    elif args.model == 'mobilenet':
-        weights = models.MobileNet_V2_Weights.IMAGENET1K_V1
-        model = create_model(args.model, weights, len(class_names), device, freeze=args.freeze)
-        criterion = nn.CrossEntropyLoss()
-        optimizer = optim.Adam(model.parameters(), lr=args.lr)
-        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=10, mode='max')
-    elif args.model == 'effnet':
-        weights = models.EfficientNet_B1_Weights.IMAGENET1K_V1
-        model = create_model(args.model, weights, len(class_names), device, freeze=args.freeze)
-        criterion = nn.CrossEntropyLoss()
-        optimizer = optim.Adam(model.parameters(), lr=args.lr)
-        lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=10, mode='max')
-    else:
+    model_weights_dict = {
+        'resnet18': models.ResNet18_Weights.IMAGENET1K_V1,
+        'resnet50': models.ResNet50_Weights.IMAGENET1K_V1,
+        'resnet101': models.ResNet101_Weights.IMAGENET1K_V1,
+        'vgg': models.VGG16_Weights.IMAGENET1K_V1,
+        'densenet': models.DenseNet121_Weights.IMAGENET1K_V1,
+        'mobilenet': models.MobileNet_V2_Weights.IMAGENET1K_V1,
+        'effnet': models.EfficientNet_B1_Weights.IMAGENET1K_V1,
+    }
+
+    if args.model not in model_weights_dict:
         raise ValueError("Invalid model choice.")
+
+    weights = model_weights_dict[args.model]
+    model = create_model(args.model, weights, len(class_names), device, freeze=args.freeze)
+    
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=args.lr)
+    lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=10, mode='max')
 
     return model, criterion, optimizer, lr_scheduler

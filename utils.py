@@ -14,6 +14,16 @@ def setup_device():
     print("Using", gpu_count, "GPUs")
     return device
 
+def setup_data_dir(args):
+    if args.task == 'damage_severity':
+        args.data_dir = '/work/u9562361/crisis_vision_benchmarks/damage_severity'
+    elif args.task == 'disaster_types':
+        args.data_dir = '/work/u9562361/crisis_vision_benchmarks/disaster_types'
+    elif args.task == 'informative':
+        args.data_dir = '/work/u9562361/crisis_vision_benchmarks/informative'
+    elif args.task == 'humanitarian':
+        args.data_dir = '/work/u9562361/crisis_vision_benchmarks/humanitarian'
+
 def save_metrics_to_csv_and_wandb(output_list, filename, wandb_log_name):
     output_list = [line.split(" - ") for line in output_list]
     output_df = pd.DataFrame(output_list, columns=["epoch", "train loss", "train f1", "val loss", "val f1", "time"])

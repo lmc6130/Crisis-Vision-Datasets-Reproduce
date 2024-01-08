@@ -21,14 +21,14 @@ def get_common_transform(normalize_transform, resize=(224, 224)):
         normalize_transform,
     ])
 
-def get_train_transform(normalize_transform, resize=(224, 224), use_trivial_aug=None):
+def get_train_transform(normalize_transform, resize=(224, 224)):
     transform_list = [
         transforms.Resize(resize, interpolation=InterpolationMode.BICUBIC),
         # transforms.RandomResizedCrop(resize, interpolation=InterpolationMode.BICUBIC),
         transforms.ToTensor(),
         normalize_transform,
     ]
-    
+
     return transforms.Compose(transform_list)
 
 def load_datasets(args):

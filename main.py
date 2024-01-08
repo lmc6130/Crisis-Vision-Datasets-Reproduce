@@ -3,23 +3,24 @@ import warnings
 from dataset import get_data_loaders
 from model import get_model_optimizer_scheduler
 from train import train_one_epoch, dev_one_epoch, val_one_epoch
-from utils import setup_device, set_seed, setup_wandb, print_final_metrics, save_metrics_to_csv_and_wandb, print_model_info
+from utils import setup_device, set_seed, setup_wandb, print_final_metrics, save_metrics_to_csv_and_wandb, print_model_info, setup_data_dir
 
 def args_parser():
     parser = argparse.ArgumentParser(description='Your script description')
     # data parameters
-    # path on twcc:/work/u9562361/crisis_vision_benchmarks/damage_severity
-    parser.add_argument('--data_dir', type=str, default='C:/crisis_vision_benchmarks/data/damage_severity', help='path to data directory')
-    parser.add_argument('--batch_size', type=int, default=128, help='batch size for training')
+    VALID_TASKS = ['damage_severity', 'disaster_types', 'informative', 'humanitarian']
+    parser.add_argument('--task', type=str, default='informative', choices=VALID_TASKS, help='choose the task')
+    parser.add_argument('--batch_size', type=int, default=64, help='batch size for training')
     parser.add_argument('--image_res', type=int, default=224, help='resolution of images')
     # training parameter
-    parser.add_argument('--epochs', type=int, default=150, help='number of training epochs')
+    parser.add_argument('--epochs', type=int, default=2, help='number of training epochs')
     parser.add_argument('--lr', type=int, default=1e-5, help='learning rate')
     parser.add_argument('--weight_decay', type=int, default=1e-3, help='weight decay')
     parser.add_argument('--seed', type=int, default=7, help='seed for reproducibility')
     parser.add_argument('--save', type=str, default='test', help='file save')
     # Model selection
-    parser.add_argument('--model', default='effnet', help='choose the model') # effnet
+    VALID_MODELS = ['resnet18', 'resnet50', 'resnet101', 'effnet', 'mobilenet', 'densenet', 'vgg']
+    parser.add_argument('--model', default='effnet', choices=VALID_MODELS, help='choose the model')
     parser.add_argument('--freeze', type=bool, default=False, help='Freeze backbone parameters')
     return parser.parse_args()
 
@@ -31,6 +32,7 @@ def main():
     set_seed(args.seed)
     warnings.filterwarnings("ignore")
     setup_wandb(args) 
+    setup_data_dir(args)
 
     # Data Loading
     trainloader, testloader, devloader, class_names = get_data_loaders(args)
