@@ -1,4 +1,4 @@
-# Reproducing Paper: Deep Learning Benchmarks and Datasets for Social Media Image Classification for Disaster Response
+# Reproduction of Deep Learning Benchmarks and Datasets for Social Media Image Classification for Disaster Response
 
 This repository contains code and resources to reproduce the results of the paper "Deep Learning Benchmarks and Datasets for Social Media Image Classification for Disaster Response" published in the 2020 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM).
 
@@ -71,8 +71,27 @@ This experiment uses the F1-score as the metric.
 * [Crisis Vision Dataset](https://crisisnlp.qcri.org/crisis-image-datasets-asonam20)
 
 ## Citation
-If you find this code or dataset useful in your research, please consider citing the original paper:
+If you use the code and pre-trained weights from this repository in your research, please cite this work as the source of the reproduced weights:
 
-F. Alam, F. Ofli, M. Imran, T. Alam and U. Qazi, "Deep Learning Benchmarks and Datasets for Social Media Image Classification for Disaster Response," 2020 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM), The Hague, Netherlands, 2020, pp. 151-158, doi: 10.1109/ASONAM49781.2020.9381294.
+```
+@misc{lim2023dsarepro,
+  title={Reproduction of Deep Learning Benchmarks and Datasets for Social Media Image Classification for Disaster Response},
+  author={Lim, Ming Chung},
+  year={2023},
+  howpublished={GitHub repository},
+  url={https://github.com/lmc6130/Disaster-Response-Datasets-Reproduce},
+}
+```
 
-Please note that this code is provided for research purposes only and should be used responsibly.
+These pre-trained weights are based on the reproduction of the paper "Deep Learning Benchmarks and Datasets for Social Media Image Classification for Disaster Response" by F. Alam et al. This code is provided for research purposes only. Please refer to the original paper for a comprehensive understanding of the methods and results.
+
+```
+@inproceedings{alam2020deep,
+  title={Deep learning benchmarks and datasets for social media image classification for disaster response},
+  author={Alam, Firoj and Ofli, Ferda and Imran, Muhammad and Alam, Tanvirul and Qazi, Umair},
+  booktitle={2020 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM)},
+  pages={151--158},
+  year={2020},
+  organization={IEEE}
+}
+```
