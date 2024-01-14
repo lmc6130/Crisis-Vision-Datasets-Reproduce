@@ -17,12 +17,16 @@ def setup_device():
 def setup_data_dir(args):
     if args.task == 'damage_severity':
         args.data_dir = '/work/u9562361/crisis_vision_benchmarks/damage_severity'
+        print('task: damage severity classification')
     elif args.task == 'disaster_types':
         args.data_dir = '/work/u9562361/crisis_vision_benchmarks/disaster_types'
+        print('task: disaster types classification')
     elif args.task == 'informative':
         args.data_dir = '/work/u9562361/crisis_vision_benchmarks/informative'
+        print('task: informative classification')
     elif args.task == 'humanitarian':
         args.data_dir = '/work/u9562361/crisis_vision_benchmarks/humanitarian'
+        print('task: humanitarian classification')
 
 def save_metrics_to_csv_and_wandb(output_list, filename, wandb_log_name):
     output_list = [line.split(" - ") for line in output_list]
